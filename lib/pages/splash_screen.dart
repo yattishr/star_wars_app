@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:star_wars_app/pages/character_listing_screen.dart';
 
 
 // void main() => runApp(MyApp());
@@ -14,9 +17,21 @@ import 'package:shimmer/shimmer.dart';
 //   }
 // }
 
+class SplashPage extends StatefulWidget {
+  @override
+  _SplashPageState createState() => _SplashPageState();
+}
 
-class SplashPage extends StatelessWidget {
+
+class _SplashPageState extends State<SplashPage>  {
   @override 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 20), () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => CharacterListingScreen())));
+  }
+
   Widget build (BuildContext context) {
     return Scaffold(
       body: Center(
@@ -84,5 +99,3 @@ class WallPaperImage extends StatelessWidget {
       ),
       );
   }
-
-
